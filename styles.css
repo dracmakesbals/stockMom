@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --header: 8vh;
+  --footer: 15vh;
+  --main: calc(100vh - calc(var(--header) + var(--footer)));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
+  background-color: #121212;
+  color: white;
+}
+
+/*Header*/
+
+header {
+  height: var(--header);
+  background-color: #1f1f1f;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  background-color: #1f1f1f;
+  font-size: 24px;
+}
+
+header ul {
+  display: flex;
+  list-style: none;
+}
+
+header ul li {
+  padding-left: 20px;
+  background-color: #1f1f1f;
+}
+
+header ul li a {
+  color: white;
+  text-decoration: none;
+  background-color: #1f1f1f;
+}
+
+/*Main*/
+main {
+  height: var(--main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-h1-loader {
+  display: flex;
+}
+
+main h1 {
+  font-size: 70px;
+  padding-right: 20px;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  margin-top: 15px;
+  --s: 64px;
+  width: var(--s);
+  aspect-ratio: 2;
+  --_g: white 90%, white;
+  background: radial-gradient(farthest-side, var(--_g)) 0 50%/25% 50%,
+    radial-gradient(farthest-side at bottom, var(--_g)) 50%
+      calc(50% - var(--s) / 16) / 25% 25%,
+    radial-gradient(farthest-side at top, var(--_g)) 50%
+      calc(50% + var(--s) / 16) / 25% 25%,
+    radial-gradient(farthest-side at bottom, var(--_g)) 100%
+      calc(50% - var(--s) / 16) / 25% 25%,
+    radial-gradient(farthest-side at top, var(--_g)) 100%
+      calc(50% + var(--s) / 16) / 25% 25%;
+  background-repeat: no-repeat;
+  animation: l14 1s infinite;
+}
+@keyframes l14 {
+  25% {
+    background-position: 0 50%, 50% 0, 50% 100%, 100% 0, 100% 100%;
+  }
+  50% {
+    background-position: 100% 50%, 0 0, 0 100%, 50% 0, 50% 100%;
+  }
+  75%,
+  100% {
+    background-position: 100% 50%, 0 calc(50% - var(--s) / 16),
+      0 calc(50% + var(--s) / 16), 50% calc(50% - var(--s) / 16),
+      50% calc(50% + var(--s) / 16);
+  }
+}
+
+/* Footer*/
+
+footer {
+  height: var(--footer);
+  background-color: #1f1f1f;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .icons {
+  background-color: #1f1f1f;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+footer .icons i {
+  background-color: #1f1f1f;
+}
+
+footer .footer-text {
+  background-color: #1f1f1f;
+  padding-top: 20px;
+}
